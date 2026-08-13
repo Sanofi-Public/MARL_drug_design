@@ -1,0 +1,105 @@
+{
+    "algorithm": {
+        "split": 1,
+        "model": {
+            "actor": [128, 128],
+            "critic": [128, 128],
+            "recurrent": true,
+            "activation": "relu",
+            "ae": false,
+            "model_device": "cpu",
+            "n_agents": 3,
+            "standardise_rewards": false,
+            "gamma": 0.9,
+            "model_recurrent": true,
+            "lr": 1e-5,
+            "tau": 0.01,
+            "max_grad_norm": 0.25,
+            "entropy_coef": 0.1,
+            "value_loss_coef": 0.5,
+            "adam_eps": 0.001,
+            "log_interval": 50000
+        },
+        "evaluate": true,
+        "num_env_steps": 500000,
+        "n_steps": 10,
+        "eval_interval": 50000,
+        "episodes_per_eval": 5,
+        "load_dir": "models/t_9999/",
+        "to_pad": 2,
+        "pre_train": false,
+        "pre_train_path": "ia2c_models/combined_mpo_rdkit"
+    },
+    "env": {
+        "parallel_envs": 40,
+        "n_agents": 3,
+        "max_ep_length": 30,
+        "env_id": "molMARL/madfmpo_2025",
+        "hunger": 3,
+        "big_reward": 0.4,
+        "small_reward": 0.15,
+        "repeat_penalty": 0.15,
+        "novelty_reward": 0.3,
+        "multiplier": 2.5,
+        "credit_window": 3,
+        "shared_credit": 1,
+        "shared_credit_mode": "immediate",
+        "novelty_mode": "local",
+        "buffer_size": 60,
+        "sampling_type": "fifo",
+        "addition_strategy": "filtered",
+        "min_props_satisfied": 2,
+        "invalid_penalty_mult": 2.0,
+        "terminate_on_invalid": false,
+        "wrappers": ["RecordStats"]
+    },
+    "representation": {
+        "type": "fragment",
+        "use_legacy": false,
+        "smiles_token": {
+            "vocab_path": "smiles_utils/vocab.json",
+            "smiles_list_path": "smiles_utils/vocab_smiles.txt",
+            "max_seq_len": 100
+        }
+    },
+    "gnn": {
+        "use_gnn": false,
+        "gnn_model": "",
+        "device": "cpu",
+        "embedding_dim": 128
+    },
+    "deepfmpo": {
+        "use_brics": false,
+        "lead_frags": null,
+        "lead_file": "data/master_data/master_data_all_plus_approved.csv",
+        "train_file": "data/master_data/solo_fxa_train.csv",
+        "eval_file": "data/master_data/solo_fxa_eval.csv",
+        "more_output": true,
+        "output_path": "decodings",
+        "return_mode": true,
+        "MAX_SWAP": 6,
+        "MAX_FRAGMENTS": 9,
+        "TIMES": 4,
+        "FEATURES": 8
+    },
+    "properties": {
+        "use_scorer": false,
+        "names": ["molweight", "tpsa", "logp"],
+        "bounds":[[450,550],[90,120],[2,4]],
+        "types": [null, null, null],
+        "weights": [1.0, 1.0, 1.0],
+        "minimize": [false, false, false],
+        "args": [null, null, null],
+        "scaling": [null, null, null]
+    },
+    "data": {
+        "input_mols": "data/unique_inputs.npy",
+        "decoding_path": "decodings/decodings",
+        "sample_config": "configs/sample_scoring.json",
+        "filtering": false
+    },
+    "logger": "csv",
+    "logdir": "logging/",
+    "seed": 1,
+    "name": "combined_no_pretrain_fxa_logp_molweight_tpsa"
+}

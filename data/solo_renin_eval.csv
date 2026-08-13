@@ -1,0 +1,9 @@
+SMILES,molweight,molweight_bounds,tpsa,tpsa_bounds,logp,logp_bounds,all_bounds
+COCC1CN(C(=O)c2c(Oc3c(C)cccc3C)n(-c3ccccc3)c3cccnc23)CCN1,395.19976242,True,37.27,False,4.266700000000004,False,False
+Cc1ccc(F)cc1Oc1c(C(=O)N2CCNCC2)c2cnccc2n1-c1ccccc1,485.231456472,False,64.96000000000001,False,4.883500000000005,False,False
+Cc1cccc(C)c1Oc1c(C(=O)N2CCNCC2)c2ncccc2n1C1CCCCC1,396.195011388,True,50.16,True,3.6617000000000015,True,True
+Cc1cccc(C)c1Oc1c(C(=O)N2CCNC(CO)C2)c2ncccc2n1-c1ccccc1,468.252526264,False,59.39,True,5.648740000000005,False,False
+Cc1cccc(F)c1Oc1c(C(=O)N2CCNCC2)c2cccnc2n1-c1ccccc1,410.21066145200007,True,50.16,True,3.9701200000000014,True,True
+Cc1cccc(C)c1Oc1c(C(=O)N2CCNC(C(C)C)C2)c2ncccc2n1-c1ccccc1,430.1805041960001,False,59.39,True,4.310720000000005,False,False
+Cc1cccc(C)c1Oc1c(C(=O)N2CCNCC2)c2ncccc2n1-c1ccccc1,430.1805041960001,False,59.39,True,4.310720000000004,False,False
+O=C(c1c(Oc2ccccc2)n(-c2ccc(F)cc2)c2ccccc12)N1CCNCC1,429.1852552280001,False,46.5,True,4.915720000000006,False,False
