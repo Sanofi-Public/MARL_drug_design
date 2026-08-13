@@ -1,0 +1,31 @@
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments / editors
+.env
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Local outputs
+outputs/
+History/
+wandb/
+*.log
